@@ -18,6 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vAX-w9-7dv">
+                                <rect key="frame" x="94" y="169" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.94938063354329827" green="0.96107245078358627" blue="0.84840985499714427" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBj-j8-wmE">
                                 <rect key="frame" x="192" y="388" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -35,27 +41,64 @@
                                     <action selector="clearButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mQ0-Dy-hx7"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vAX-w9-7dv">
-                                <rect key="frame" x="94" y="169" width="240" height="128"/>
-                                <color key="backgroundColor" red="0.94938063354329827" green="0.96107245078358627" blue="0.84840985499714427" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGv-Ti-8Wa">
+                                <rect key="frame" x="20" y="80" width="40" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYY-Qe-gQK">
+                                <rect key="frame" x="108" y="44" width="46" height="30"/>
+                                <state key="normal" title="Up"/>
+                                <connections>
+                                    <action selector="rateUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uu5-g2-IBH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Um-bD-M5k">
+                                <rect key="frame" x="112" y="97" width="39" height="30"/>
+                                <state key="normal" title="Down"/>
+                                <connections>
+                                    <action selector="rateDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1kp-9H-Uob"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPC-3m-kNA">
+                                <rect key="frame" x="68" y="80" width="100" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="PPC-3m-kNA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="28V-UB-eHO"/>
                             <constraint firstItem="vAX-w9-7dv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="125" id="4aJ-ea-byE"/>
+                            <constraint firstItem="UGv-Ti-8Wa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Duh-kT-18S"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vAX-w9-7dv" secondAttribute="trailing" constant="80" id="JkV-6Y-WCS"/>
+                            <constraint firstItem="gYY-Qe-gQK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Jog-n5-7Uw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gYY-Qe-gQK" secondAttribute="trailing" constant="260" id="KCt-HM-TZ4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UGv-Ti-8Wa" secondAttribute="trailing" constant="354" id="Qaf-GK-5J2"/>
+                            <constraint firstItem="PPC-3m-kNA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="68" id="R3k-Um-qZN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gYY-Qe-gQK" secondAttribute="bottom" constant="788" id="TSZ-Yy-zKW"/>
+                            <constraint firstItem="6Um-bD-M5k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="112" id="TSg-36-n18"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6Um-bD-M5k" secondAttribute="bottom" constant="735" id="WT9-O2-yfw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vAX-w9-7dv" secondAttribute="bottom" constant="565" id="XLy-Xe-l1W"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bef-gF-JsR" secondAttribute="bottom" constant="363" id="YFj-hX-uXf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PPC-3m-kNA" secondAttribute="trailing" constant="246" id="aK4-zg-ZCP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UGv-Ti-8Wa" secondAttribute="bottom" constant="761" id="aSW-VC-DqK"/>
                             <constraint firstItem="bef-gF-JsR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="425" id="aZs-Lq-evl"/>
+                            <constraint firstItem="gYY-Qe-gQK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="108" id="iC9-qc-G8P"/>
                             <constraint firstItem="vAX-w9-7dv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="94" id="mGD-Ck-sUe"/>
+                            <constraint firstItem="UGv-Ti-8Wa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="ot0-sD-v7G"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PPC-3m-kNA" secondAttribute="bottom" constant="761" id="qJB-Ii-1qy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bef-gF-JsR" secondAttribute="trailing" constant="189" id="tAP-up-lQs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6Um-bD-M5k" secondAttribute="trailing" constant="263" id="tPI-TU-DGe"/>
+                            <constraint firstItem="6Um-bD-M5k" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="53" id="vwM-yF-cy8"/>
                             <constraint firstItem="bef-gF-JsR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="189" id="xzC-Vl-1l8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="rateLabel" destination="PPC-3m-kNA" id="XkE-TT-fWp"/>
                         <outlet property="textView1" destination="vAX-w9-7dv" id="FF0-PK-MVS"/>
                     </connections>
                 </viewController>

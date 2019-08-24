@@ -12,10 +12,11 @@ import AVFoundation
 class MainViewController: UIViewController {
 
     @IBOutlet weak var textView1: UITextView!
+    @IBOutlet weak var rateLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -24,7 +25,8 @@ class MainViewController: UIViewController {
         
         let utterance = AVSpeechUtterance(string: textView1.text)
         utterance.voice = AVSpeechSynthesisVoice(language: "en-GB")
-        utterance.rate = 0.3
+        let float = (rateLabel.text! as NSString).floatValue
+        utterance.rate = float
         
         let synthesizer = AVSpeechSynthesizer()
         synthesizer.speak(utterance)
@@ -32,6 +34,23 @@ class MainViewController: UIViewController {
     
     @IBAction func clearButton(_ sender: Any) {
         textView1.text = ""
+    }
+    @IBAction func rateUp(_ sender: Any) {
+        var rate = (rateLabel.text! as NSString).floatValue
+        if(rate <= 0.5){
+            rate += 0.1
+            rateLabel.text = String(rate)
+        }
+
+        
+    }
+    @IBAction func rateDown(_ sender: Any) {
+        var rate = (rateLabel.text! as NSString).floatValue
+        if(rate >= 0.4){
+            rate -= 0.1
+            rateLabel.text = String(rate)
+        }
+
     }
     /*
     // MARK: - Navigation
